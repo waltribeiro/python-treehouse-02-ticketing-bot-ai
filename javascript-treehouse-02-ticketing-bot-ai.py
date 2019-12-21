@@ -1,27 +1,40 @@
-ticket_price = 10
+TICKET_PRICE = 10
 
 tickets_remaining = 100
 
-# run this code continuously until we run out of tickets
+
+# Run this code continuously until we run out of tickets
 while tickets_remaining >= 1:
-
-    # output how many tickets are remaining using the tickets_remaining variable
+    
+    # Output how many tickets are remaining using the tickets_remaining variable
+    
     print("There are {} tickets remaining.".format(tickets_remaining))
-
-    # gather the user's name and assign it to a new variable
+    
+    # Gather the user's name and assign it to a new variable
     name = input("What is your name?  ")
-
-    # prompt the user by name and ask how many tickets they would like 
+    
+    # Prompt the user by name and ask how many tickets they would like
     num_tickets = input("How many tickets would you like, {}?  ".format(name))
     num_tickets = int(num_tickets)
-    amount_due = num_tickets * ticket_price
+    # Calculate the price (number of tickets multiplied by the price) and assign it to a variable
+    amount_due = num_tickets * TICKET_PRICE
+    # Output the price to the screen
     print("The total due is ${}".format(amount_due))
-    should_proceed = input("Do you want to proceed? Y/N  ")
+    
+    # Prompt user if they want to proceed.  Y/N?
+    should_proceed = input("Do you want to proceed?  Y/N  ")
+    
+    # If they want to proceed
     if should_proceed.lower() == "y":
-        # todo: gather credit card information and process it
+        # print out to the screen "SOLD!" to confirm purchase
+        # TODO: Gather credit card information and process it.
         print("SOLD!")
-        tickets_remaining -= num-tickets
+        # and then decrement the tickets remaining by the number of tickets purchased
+        tickets_remaining -= num_tickets
+    # Otherwise....
     else:
-        print("Thank you anyways, {}".format(name))
+        # Thank them by name
+        print("Thank you anyways, {}!".format(name))
 
-# print("Sorry the tickets are all sold out")
+# Notify user that the tickets are sold out    
+print("Sorry the tickets are all sold out!!! :(")
