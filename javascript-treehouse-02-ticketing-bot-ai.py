@@ -15,7 +15,7 @@ while tickets_remaining >= 1:
     num_tickets = input("How many tickets would you like, {}?  ".format(name))
     num_tickets = int(num_tickets)
     amount_due = num_tickets * ticket_price
-    print("The total due is ${}".format(amount.due))
+    print("The total due is ${}".format(amount_due))
     should_proceed = input("Do you want to proceed? Y/N  ")
     if should_proceed.lower() == "y":
         # todo: gather credit card information and process it
